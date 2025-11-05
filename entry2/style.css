@@ -1,0 +1,243 @@
+*{padding-left: 12px;padding-right: 30px;}
+p{padding-left: 12px;text-align: justify;line-height: 150%;font-size: 19px;}
+h1{text-align: center;padding-top: 6px;padding: bottom 10px;;}
+h1{
+  font-family:Georgia, 'Times New Roman', Times, serif, system-ui;
+  font-weight: 400;
+  font-style: normal; font-size: 64px;
+}
+.title {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Hide all words at first */
+.title span {
+  opacity: 0;
+  display: inline-block;
+  animation: wordSwap 8s ease-in-out forwards;
+}
+
+/* Animate each word one after another */
+.title span:nth-child(1) { animation-delay: 0s; }
+.title span:nth-child(2) { animation-delay: 2s; }
+.title span:nth-child(3) { animation-delay: 4s; }
+.title span:nth-child(4) { animation-delay: 6s; }
+.title span:nth-child(5) { animation-delay: 8s; }
+.title span:nth-child(6) { animation-delay: 10s; }
+.title span:nth-child(7) { animation-delay: 12s; }
+.title span:nth-child(8) { animation-delay: 14s; }
+
+/* Each word fades in, stays briefly, fades out */
+@keyframes wordSwap {
+  0%, 20% { opacity: 1; }
+  25%, 100% { opacity: 0; }
+}
+
+/* After all words, full title fades in */
+@keyframes finalTitle {
+  to { opacity: 1; }
+}
+.full-title {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  animation: finalTitle 2s ease-in-out 16s forwards; /* appears after word animation ends */
+}
+.page-content {
+ position: absolute;
+  top: 25%; /* moves it right below the title visually */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  opacity: 0;
+  animation: fadeInContent 2s ease-in forwards;
+  animation-delay: 40s;
+  font-family:  "Raleway", system-ui, sans-serif;
+}
+
+@keyframes fadeInContent {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+h2{font-size: 30px;}
+
+h2 {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <light>;
+  font-style: normal;
+}
+p1 {text-align: center;}
+
+ 
+.prompt1 {
+   font-size: 24px;
+  font-family: "Raleway", sans-serif;
+  background: transparent;
+  color: rgb(247, 250, 255);
+  width: 420px;
+  padding: 13px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 18px rgb(247, 250, 255);
+  margin-left: 12px;
+  margin-top: 40px;
+  align-content: center;
+}
+
+.prompt1:hover {
+  background: rgb(25, 45, 90);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgb(25, 45, 90, 0.2);
+}
+.promptans1 {
+  font-size: 18px;
+  margin-left: 8px;
+  margin-right: 40px;
+  margin-top: 17px;
+  text-align:justify;
+  line-height: 1.3;
+  color: rgb(247, 250, 255);
+
+}
+.prompt2 {
+  font-size: 24px;
+  font-family: "Raleway", sans-serif;
+  background: transparent;
+  color: rgb(247, 250, 255);
+  width: 420px;
+  padding: 13px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 18px rgb(247, 250, 255);
+  margin-left: 12px;
+  margin-top: 40px;
+  }
+.prompt2:hover {
+  background: rgb(25, 45, 90);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgb(25, 45, 90, 0.2);
+
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+   min-height: 100vh;
+  background: url("https://i.pinimg.com/736x/b0/df/66/b0df66d6e0207d325a83a68157ad4ad5.jpg") center center / cover no-repeat fixed;
+  color: #ffffff;
+  margin: 0;
+  overflow-x: hidden;
+  font-family:  "Raleway", system-ui, sans-serif;;
+  
+}
+body::before {
+  content:"";
+  position: fixed;
+  inset:0;
+background: rgba(0, 0, 0, 0.45); /* soft dark overlay to calm the photo */
+  z-index: 0;
+}
+
+.poem {
+  position: relative;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: "Playfair Display", serif;
+font-size: 72px;             
+  font-weight: 700;             
+  letter-spacing: 4px;  
+  letter-spacing: 3px;
+  margin-top: 300px;
+  opacity: 0;
+  margin-left: 500px;
+  animation: poemFade 8s ease 22s forwards, poemFadeOut 2s ease 36s forwards;
+   align-items: center;
+
+}
+
+.poem p {
+  margin: 10px 0;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+  font-size: 42px;
+}
+
+/* subtle rise-in + fade animation */
+@keyframes poemFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes poemFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.prompt-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 20px; /* reduce or increase to adjust vertical spacing */
+  position: relative;
+  flex-wrap: wrap;
+}
+.prompt3 {
+  font-size: 24px;
+  font-family: "Raleway", sans-serif;
+  background: transparent;
+  color: rgb(247, 250, 255);
+  width: 300px; /* exact width */
+  padding: 13px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 18px rgb(247, 250, 255);
+  margin: 20px auto 0;
+  display: block;
+  text-align: center;
+}
+
+.prompt3:hover {
+  background: rgb(25, 45, 90);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(25, 45, 90, 0.2);
+}
