@@ -1,0 +1,13 @@
+.link {
+    background-color: rgb(229, 255, 0);
+    font-size: 72px;
+}
+h1{
+  font-family:Georgia, 'Times New Roman', Times, serif, system-ui;
+  font-weight: 400;
+  font-style: normal; font-size: 64px;
+}
+
+body {
+  background-color: lightblue;
+}
